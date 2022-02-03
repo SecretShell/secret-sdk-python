@@ -74,7 +74,7 @@ def get_contract_address(
     """
     if tx_result.logs:
         contract_address = tx_result.logs[msg_index].events_by_type[
-            "instantiate_contract"
+            "message"
         ]["contract_address"][0]
         return AccAddress(contract_address)
     else:
